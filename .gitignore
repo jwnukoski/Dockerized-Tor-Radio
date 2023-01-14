@@ -1,0 +1,9 @@
+icecast/logs/*
+icecast/config/*
+ices/config/*
+tor/nginx/*
+music
+
+!icecast/config/example.icecast.xml
+!ices/config/example.ices.xml
+!tor/nginx/example.default.conf

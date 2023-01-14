@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ices>
+    <stream>
+        <background>0</background>
+        <loglevel>3</loglevel>
+        <consolelog>1</consolelog>
+        <pidfile>/var/log/ices/ices.pid</pidfile>
+        
+        <metadata>
+            <name>My Stream</name>
+            <genre>Rock</genre>
+            <description>A short description of your stream</description>
+            <url>http://mysite.org</url>
+        </metadata>
+
+        <!-- input module
+                The module used here is the playlist module - it has 
+                'submodules' for different types of playlist. There are
+                two currently implemented, 'basic', which is a simple
+                file-based playlist, and 'script' which invokes a command
+                to returns a filename to start playing. -->
+
+            <input>
+                <module>playlist</module>
+                <param name="type">basic</param>
+                <param name="file">/usr/share/ices/music/playlist.txt</param>
+                <!-- random play -->
+                <param name="random">1</param>
+                <!-- if the playlist get updated that start at the beginning -->
+                <param name="restart-after-reread">1</param>
+                <!-- if set to 1 , plays once through, then exits. -->
+                <param name="once">0</param>
+            </input>
+        
+        <instance>
+            <hostname>icecast</hostname>
+            <port>8000</port>
+            <username>source</username>
+            <password>hackme</password>
+            <mount>stream</mount>
+            <reconnectdelay>2</reconnectdelay>
+            <reconnectattempts>-1</reconnectattempts> 
+        </instance>
+
+        <!-- <encode>
+            <nominal-bitrate>64000</nominal-bitrate>
+            <samplerate>22050</samplerate>
+            <channels>1</channels>
+        </encode> -->
+    </stream>
+</ices>
