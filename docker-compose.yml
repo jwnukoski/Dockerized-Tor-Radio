@@ -1,21 +1,17 @@
 version: '1'
 
 services:
-  # Hosts the stream for users to listen to
+  # Hosts the stream
   icecast:
     container_name: icecast
     build:
       context: ./icecast
       dockerfile: ./Dockerfile
     restart: always
-    # volumes:
-    #   - ./icecast/logs:/etc/icecast2/logs
     ports:
       - 8000
-    networks:
-      - bridged-network
 
-  # Streams the audio into the icecast server
+  # Streams the audio to the icecast server
   ices:
     container_name: ices
     build:
@@ -26,8 +22,6 @@ services:
       - ./music/dump:/usr/share/ices/music/dump
       - ./music/staging:/usr/share/ices/music/staging
       - ./music/ogg:/usr/share/ices/music/ogg
-    networks:
-      - bridged-network
     depends_on:
       - icecast
 
@@ -38,11 +32,7 @@ services:
       context: ./tor
       dockerfile: ./Dockerfile
     restart: always
-    networks:
-      - bridged-network
     depends_on:
       - icecast
-
-networks:
-  bridged-network:
-    driver: bridge
+    ports:
+      - 80:80

@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 USER root
 RUN mkdir /usr/share/ices
 WORKDIR /usr/share/ices
