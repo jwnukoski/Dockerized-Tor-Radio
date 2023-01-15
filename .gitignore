@@ -1,9 +1,12 @@
 icecast/logs/*
 icecast/config/*
 ices/config/*
-tor/nginx/*
+nginx-tor/tor/config/*
+nginx-tor/nginx/config/*
+nginx-tor/tor/info
 music
 
 !icecast/config/example.icecast.xml
 !ices/config/example.ices.xml
-!tor/nginx/example.default.conf
+!nginx-tor/nginx/config/example.default.conf
+!nginx-tor/tor/config/default.torrc

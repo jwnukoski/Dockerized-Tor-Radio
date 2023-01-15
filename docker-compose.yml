@@ -8,8 +8,6 @@ services:
       context: ./icecast
       dockerfile: ./Dockerfile
     restart: always
-    ports:
-      - 8000
 
   # Streams the audio to the icecast server
   ices:
@@ -26,13 +24,13 @@ services:
       - icecast
 
   # Hosts the webpage for users to play the icecast stream
-  tor:
-    container_name: tor
+  nginx-tor:
+    container_name: nginx-tor
     build:
-      context: ./tor
+      context: ./nginx-tor
       dockerfile: ./Dockerfile
     restart: always
+    volumes:
+      - ./nginx-tor/tor/info:/var/lib/tor/icecast
     depends_on:
       - icecast
-    ports:
-      - 80:80
