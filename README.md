@@ -28,3 +28,7 @@ You can re-run these scripts by restarting the ices container, or by manually ru
 
 To get your .onion address, you can run `cat nginx-tor/tor/info/hostname` (may need to use 'sudo'), or inspect the container which will cat out the address at launch.
 
+If you are already using port 8000, then you'll need to update it in the following locations:
+- docker-compose.yml
+- ./ices/config/ices.xml
+- ./nginx-tor/nginx/config/default.conf (in proxy_pass)
