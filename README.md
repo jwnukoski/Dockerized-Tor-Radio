@@ -7,7 +7,7 @@ By default you can copy mp3 files into a directory to have them automatically co
 - Music files with the same name will cause issues, even if they're in different directories.  
 This is planned to be fixed in the future.
 
-- This project is for research, and is provided as-is.
+- This project is for research, and is provided as-is. Why use Tor? No DNS or hosting charges!
 
 ## Setup
 By default you shouldn't need to make many changes to the default config files - besides passwords and usernames.  
