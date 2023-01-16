@@ -8,6 +8,10 @@ services:
       context: ./icecast
       dockerfile: ./Dockerfile
     restart: always
+    ports:
+      - 8000
+    networks:
+      - tor-radio-network
 
   # Streams the audio to the icecast server
   ices:
@@ -22,6 +26,8 @@ services:
       - ./music/ogg:/usr/share/ices/music/ogg
     depends_on:
       - icecast
+    networks:
+      - tor-radio-network
 
   # Hosts the webpage for users to play the icecast stream
   nginx-tor:
@@ -34,3 +40,9 @@ services:
       - ./nginx-tor/tor/info:/var/lib/tor/icecast
     depends_on:
       - icecast
+    networks:
+      - tor-radio-network
+    
+networks:
+  tor-radio-network:
+    driver: bridge
