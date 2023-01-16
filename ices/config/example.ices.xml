@@ -37,7 +37,7 @@
             <port>8000</port>
             <username>source</username>
             <password>hackme</password>
-            <mount>stream</mount>
+            <mount>stream.ogg</mount>
             <reconnectdelay>2</reconnectdelay>
             <reconnectattempts>-1</reconnectattempts> 
         </instance>
