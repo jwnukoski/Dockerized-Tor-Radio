@@ -9,4 +9,4 @@ music
 !icecast/config/example.icecast.xml
 !ices/config/example.ices.xml
 !nginx-tor/nginx/config/example.default.conf
-!nginx-tor/tor/config/default.torrc
+!nginx-tor/tor/config/example.torrc

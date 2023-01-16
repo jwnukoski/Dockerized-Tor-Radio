@@ -24,7 +24,7 @@ If you wish to modify any of these processes, then see the scripts located in `i
 You can re-run these scripts by restarting the ices container, or by manually running them in the container located at `/usr/share/ices/scripts`.
 8. A playlist will automatically be generated. By default it will shuffle and loop. You can change this in your `ices/config/ices.xml` file.
 9. Copy the `./nginx-tor/nginx/config/example.default.conf` to `./nginx-tor/nginx/config/default.conf`. Make any adjustments as needed.
-10. Copy the `./nginx-tor/tor/config/default.torrc` to `./nginx-tor/tor/config/torrc`.  Make any adjustments as needed.
+10. Copy the `./nginx-tor/tor/config/example.torrc` to `./nginx-tor/tor/config/torrc`.  Make any adjustments as needed.
 
 To get your .onion address, you can run `cat nginx-tor/tor/info/hostname` (may need to use 'sudo'), or inspect the container which will cat out the address at launch.
 
